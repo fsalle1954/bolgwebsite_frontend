@@ -2,8 +2,8 @@
 
 import React, { useContext, useState } from "react";
 import { Link, useLocation, useNavigation } from "react-router-dom";
-import BsSearch from "react-icons/bs";
-import FaBars from "react-icons/fa";
+import { BsSearch } from "react-icons/bs";
+import { FaBars } from "react-icons/fa";
 import Menu from "./Menu";
 import UserContext from "../context/UserContext";
 
