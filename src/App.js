@@ -10,7 +10,7 @@ import EditPost from "./pages/EditPost";
 import Profile from "./pages/Profile";
 import { Route, Routes } from "react-router-dom";
 import UserContextProvider from "./context/UserContext";
-
+import Navbar from "./components/Navbar";
 function App() {
   return (
     <UserContextProvider>

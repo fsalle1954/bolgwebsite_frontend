@@ -49,6 +49,7 @@ function Home() {
 
   useEffect(() => {
     fetchPosts();
+    // eslint-disable-next-line
   }, [search]);
 
   const fillterData = (filerData) => {
@@ -58,28 +59,30 @@ function Home() {
     setFilterData(newpost);
   };
   return (
-    <div>
-      <Navbar />
-
+    <>
       <div>
-        <div className="flex flex-wrap ">
-          <div className=" p-3 m-5 flex flex-wrap justify-center ">
-            {cat.length &&
-              cat?.map((category) => {
-                return (
-                  <button
-                    className=" p-3 m-5 h-[90px] w-[150px] border text-lg font-semibold bg-white
+        <Navbar />
+
+        <div>
+          <div className="flex flex-wrap ">
+            <div className=" p-3 m-5 flex flex-wrap justify-center ">
+              {cat.length &&
+                cat?.map((category) => {
+                  return (
+                    <button
+                      className=" p-3 m-5 h-[90px] w-[150px] border text-lg font-semibold bg-white
 hover: shadow-blue-20@ shadow shadow-black"
-                    onClick={() => fillterData(category)}
-                  >
-                    {category}
-                  </button>
-                );
-              })}
+                      onClick={() => fillterData(category)}
+                    >
+                      {category}
+                    </button>
+                  );
+                })}
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 
