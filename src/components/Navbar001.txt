@@ -5,7 +5,7 @@ import { Link, useLocation, useNavigation } from "react-router-dom";
 import { BsSearch } from "react-icons/bs";
 import { FaBars } from "react-icons/fa";
 import Menu from "./Menu";
-import { UserContext } from "../context/UserContext";
+import UserContext from "../context/UserContext";
 
 function Navbar() {
   const [prompt, setPrompt] = useState("");

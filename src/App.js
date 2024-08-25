@@ -11,20 +11,49 @@ import Profile from "./pages/Profile";
 import { Route, Routes } from "react-router-dom";
 import UserContextProvider from "./context/UserContext";
 import Navbar from "./components/Navbar";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Home />,
+  },
+  {
+    path: "/login",
+    element: <Login />,
+  },
+
+  {
+    path: "/register",
+    element: <Register />,
+  },
+
+  {
+    path: "/write",
+    element: <CreatePost />,
+  },
+
+  {
+    path: "/Post/post/:id",
+    element: <PostDetails />,
+  },
+
+  {
+    path: "/edit/:id",
+    element: <EditPost />,
+  },
+
+  {
+    path: "/myblogs/:id",
+    element: <MyBlogs />,
+  },
+
+  {
+    path: "/profile/:id",
+    element: <Profile />,
+  },
+]);
+
 function App() {
-  return (
-    <UserContextProvider>
-      <Routes>
-        <Route exact path="/" element={<Home />} />
-        <Route exact path="/login" element={<Login />} />
-        <Route exact path="/register" element={<Register />} />
-        <Route exact path="/write" element={<CreatePost />} />
-        <Route exact path="/Post/post/:id" element={<PostDetails />} />
-        <Route exact path="/edit/:id" element={<EditPost />} />
-        <Route exact path="/myblogs/:id" element={<MyBlogs />} />
-        <Route exact path="/profile/:id" element={<Profile />} />
-      </Routes>
-    </UserContextProvider>
-  );
+  return <RouterProvider router={router} />;
 }
 export default App;

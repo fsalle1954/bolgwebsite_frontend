@@ -8,7 +8,7 @@ import { useEffect, useContext, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import Loader from "../components/Loader";
 import { UserContext } from "../context/UserContext";
-
+import { BrowserRouter } from "react-router-dom";
 function Home() {
   const { search } = useLocation();
   const [posts, setPosts] = useState(false);
