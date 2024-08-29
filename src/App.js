@@ -8,13 +8,17 @@ import CreatePost from "./pages/CreatePost";
 import PostDetails from "./pages/PostDetails";
 import EditPost from "./pages/EditPost";
 import Profile from "./pages/Profile";
-import { Route, Routes } from "react-router-dom";
-import UserContextProvider from "./context/UserContext";
-import Navbar from "./components/Navbar";
+// import { Route, Routes } from "react-router-dom";
+// import UserContextProvider from "./context/UserContext";
+// import Navbar from "./components/Navbar";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 const router = createBrowserRouter([
   {
     path: "/",
+    element: <Home />,
+  },
+  {
+    path: "/home",
     element: <Home />,
   },
   {
