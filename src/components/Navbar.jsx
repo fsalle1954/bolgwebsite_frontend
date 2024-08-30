@@ -1,7 +1,7 @@
 // Navbar
 
 import React, { useContext, useState } from "react";
-import { Link, useLocation, useNavigation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { BsSearch } from "react-icons/bs";
 import { FaBars } from "react-icons/fa";
 import Menu from "./Menu";
@@ -10,7 +10,12 @@ import { UserContext } from "../context/UserContext";
 function Navbar() {
   const [prompt, setPrompt] = useState("");
   const [menu, setMenu] = useState(false);
-  const navigate = useNavigation();
+  const navigate = useNavigate();
+  //const navigation = useNavigation();
+  const handleNavigate = () => {
+    navigate(prompt ? "?search" + prompt : navigate("/"));
+    // navigate("/", { replace: true });
+  };
 
   const path = useLocation().pathname;
 
@@ -37,9 +42,7 @@ function Navbar() {
               type="text"
             />
             <p
-              onClick={() =>
-                navigate(prompt ? "?search" + prompt : navigate("/"))
-              }
+              onClick={handleNavigate}
               className="cursor-pointer p-1 bg-white text-black rounded-r-xl"
             >
               <BsSearch />

@@ -81,6 +81,7 @@ hover: shadow-blue-20@ shadow shadow-black"
             </div>
           </div>
         </div>
+        <Footer />
       </div>
     </>
   );

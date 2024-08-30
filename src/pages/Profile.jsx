@@ -16,7 +16,7 @@ function Profile() {
   const [password, setpassword] = useState("");
   const { user, setUser } = useContext(UserContext);
   const navigate = useNavigate();
-  const [updates, setUpdated] = useState(false);
+  const [updated, setUpdated] = useState(false);
 
   const fetchProfile = async () => {
     try {
@@ -28,11 +28,12 @@ function Profile() {
       console.log(err);
     }
   };
+
   const handleuserUpdated = async () => {
     setUpdated(false);
 
     try {
-      const res = await fetch("/api/users/${user._id}", {
+      const res = await fetch(`/api/users/${user._id}`, {
         method: "PUT",
         headers: {
           "content-type": "application/json",
@@ -61,9 +62,12 @@ function Profile() {
     }
   };
 
-  useEffect(() => {
-    fetchProfile();
-  }, [param]);
+  useEffect(
+    () => {
+      fetchProfile();
+    },
+    [param] // eslint-disable-line react-hooks/exhaustive-deps
+  );
   return (
     <div>
       <Navbar />
